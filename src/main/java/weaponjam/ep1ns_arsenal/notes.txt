@@ -1,0 +1,4 @@
+Important Notes to Self:
+1. To spawn an entity, you have to have the world, then once you have world w, you can do w.spawnEntity(). Parameters include required location and type, and optional more.
+2. Players belong to the following classes/interfaces: Entity, LivingEntity, Player.
+2A. What you need is probably in the class LivingEntity, such as Eye Direction as a vector.

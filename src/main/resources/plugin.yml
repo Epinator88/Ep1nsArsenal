@@ -1,0 +1,13 @@
+name: Ep1ns_Arsenal
+version: 0.1.1
+main: weaponjam.ep1ns_arsenal.Ep1ns_Arsenal
+api-version: 1.20
+description: Adds some stuff. Do /giveall to recieve all plugin stuff.
+commands:
+  giveall:
+    description: Gives all items from the plugin in progressive order. You make your own kit, though.
+  kit:
+    description: Gives a predetermined kit, made by Ep1nator88 hismelf, with items from the plugin. Jump straight into the fight!
+  storedquery:
+    description: Shows you how much health you have stored in your Vampirism Sword. Kill something to release it!
+

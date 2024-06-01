@@ -148,7 +148,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         swordLore.add("A sword that steals the life of those it damages.");
         swordLore.add("The sword stores stolen health, and applies it only when the foe is slain");
         swordLore.add("All health is given at once, no matter who is still alive.");
-        swordLore.add("Barely works on non-player entities. Loses most of it's charge, but is good in a pinch.");
+        swordLore.add("Barely works on non-player entities. Loses most of its charge, but is good in a pinch.");
         f.setLore(swordLore);
         f.setUnbreakable(true);
         vampSword.setItemMeta(f);

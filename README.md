@@ -1,0 +1,1 @@
+Hello! This is the first plugin I've made, and the first plugin I've finished and published to github. It adds a few items to Minecraft, that are specifically meant for combat purposes and cannot be crafted. Enjoy!

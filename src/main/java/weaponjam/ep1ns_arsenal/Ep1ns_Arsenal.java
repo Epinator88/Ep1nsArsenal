@@ -138,6 +138,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         gatLore.add("Press LEFT CLICK to launch an arrow.");
         gatLore.add("Also, doesn't work when charged.");
         gatLore.add("And doesn't work with tipped arrows. I can't make this TOO overpowered.");
+        gatLore.add("Also, don't shoot it upwards. Just don't.");
         e.setLore(gatLore);
         e.setUnbreakable(true);
         gatlingBow.setItemMeta(e);

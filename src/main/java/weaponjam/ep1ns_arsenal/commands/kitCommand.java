@@ -15,6 +15,8 @@ public class kitCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         Player p = (Player) sender;
+
+        p.getInventory().clear();
         p.getInventory().setHelmet(new ItemStack(Material.NETHERITE_HELMET));
         p.getInventory().setChestplate(new ItemStack(Material.NETHERITE_CHESTPLATE));
         p.getInventory().setLeggings(new ItemStack(Material.NETHERITE_LEGGINGS));

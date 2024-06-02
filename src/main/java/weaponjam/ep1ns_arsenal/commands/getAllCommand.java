@@ -22,6 +22,8 @@ public class getAllCommand implements CommandExecutor {
             x = p.getInventory().firstEmpty();
             p.getInventory().setItem(x, Ep1ns_Arsenal.instance.doubleaxe);
             x = p.getInventory().firstEmpty();
+            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.trident);
+            x = p.getInventory().firstEmpty();
             p.getInventory().setItem(x, Ep1ns_Arsenal.instance.bow);
             x = p.getInventory().firstEmpty();
             p.getInventory().setItem(x, Ep1ns_Arsenal.instance.gatlingBow);
@@ -29,8 +31,7 @@ public class getAllCommand implements CommandExecutor {
             p.getInventory().setItem(x, Ep1ns_Arsenal.instance.fakePearl);
             x = p.getInventory().firstEmpty();
             p.getInventory().setItem(x, Ep1ns_Arsenal.instance.infGapple);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.boots);
+            p.getInventory().setBoots(Ep1ns_Arsenal.instance.boots);
             p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
         }
         return true;

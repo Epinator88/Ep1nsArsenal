@@ -27,7 +27,7 @@ public class gatlingListener implements Listener {
                         v.multiply(3);
                         x.setShooter(ev.getPlayer());
                         x.setVelocity(v);
-                        x.setDamage(2);
+                        x.setDamage(1);
                         x.setHasBeenShot(true);
                         x.setCritical(true);
                         ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_ARROW_SHOOT, 0.65F, 0.4F);

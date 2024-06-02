@@ -40,6 +40,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public ItemStack godShield = new ItemStack(Material.SHIELD);
 
+    public ItemStack trident = new ItemStack(Material.TRIDENT);
+
     public NamespacedKey specialArrow = new NamespacedKey(this, "specialArrow");
 
     public NamespacedKey jumpTimer = new NamespacedKey(this, "jumpTimer");
@@ -48,7 +50,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public NamespacedKey storedHealth = new NamespacedKey(this, "storedHealth");
 
-    public ItemStack killer = new ItemStack(Material.FEATHER);
+    public NamespacedKey funnyTrident = new NamespacedKey(this, "funnyTrident");
 
     public ItemStack infGapple = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE);
 
@@ -100,21 +102,20 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new longfallListener(), this);
 
         ItemMeta b = infGapple.getItemMeta();
-        b.setDisplayName(ChatColor.LIGHT_PURPLE + "The Goated Apple");
+        b.setDisplayName(ChatColor.LIGHT_PURPLE + "Goated Apple");
         List<String> gapLore = new ArrayList<>();
         gapLore.add("A TOTALLY ORIGINAL buffing fruit.");
         gapLore.add("Infinite. Let the core regrow to eat it again.");
         gapLore.add("Completely original and did not come from anywhere else.");
         b.setLore(gapLore);
         infGapple.setItemMeta(b);
-        infGapple.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
         getServer().getPluginManager().registerEvents(new gappleUpdateListener(), this);
 
         ItemMeta c = infGappleCool.getItemMeta();
-        c.setDisplayName("The Pear Core");
+        c.setDisplayName("Goated Core");
         List<String> coreLore = new ArrayList<>();
         coreLore.add("The core of a Goated Apple.");
-        coreLore.add("Regrows automatically after 1m30s of eating.");
+        coreLore.add("Regrows automatically after 2m of having been eaten");
         coreLore.add("Throw it away if you want, I guess. It won't regrow again though.");
         c.setLore(coreLore);
         infGappleCool.setItemMeta(c);
@@ -149,6 +150,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         swordLore.add("The sword stores stolen health, and applies it only when the foe is slain");
         swordLore.add("All health is given at once, no matter who is still alive.");
         swordLore.add("Barely works on non-player entities. Loses most of its charge, but is good in a pinch.");
+        swordLore.add("sussy test");
         f.setLore(swordLore);
         f.setUnbreakable(true);
         vampSword.setItemMeta(f);
@@ -168,6 +170,18 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         godShield.setItemMeta(g);
         godShield.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1000);
 
+        ItemMeta a = trident.getItemMeta();
+        a.setDisplayName(ChatColor.BLUE + "Ender Trident");
+        List<String> triLore = new ArrayList<>();
+        triLore.add("A trident only found in End Cities.");
+        triLore.add("On hit, brings the target back to the thrower.");
+        triLore.add("GET OVER HERE!!!");
+        a.setUnbreakable(true);
+        a.setLore(triLore);
+        trident.setItemMeta(a);
+        trident.addEnchantment(Enchantment.LOYALTY, 3);
+        getServer().getPluginManager().registerEvents(new tridentGotchaListener(), this);
+
         onNewPlayer();
 
         getCommand("giveall").setExecutor(new getAllCommand());
@@ -175,6 +189,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         getCommand("storedquery").setExecutor(new storedQuery());
 
         getCommand("kit").setExecutor(new kitCommand());
+
+        getServer().getPluginManager().registerEvents(new potPunchListener(), this);
 
         getServer().getPluginManager().registerEvents(new playerJoinEvent(), this);
     }

@@ -28,6 +28,7 @@ public class kitCommand implements CommandExecutor {
         p.getInventory().setItem(6, Ep1ns_Arsenal.instance.fakePearl);
         p.getInventory().setItem(5, Ep1ns_Arsenal.instance.infGapple);
         p.getInventory().setItem(7, new ItemStack(Material.GOLDEN_CARROT, 64));
+        p.getInventory().setItem(8, Ep1ns_Arsenal.instance.trident);
         p.getInventory().setItem(9, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(10, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(11, new ItemStack(Material.ARROW, 64));

@@ -39,19 +39,21 @@ public class onVampSteal implements Listener {
             }
             else {
                 if (ev.getEntity() instanceof LivingEntity) {
-                    LivingEntity l = (LivingEntity) ev.getEntity();
-                    p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE) + ev.getFinalDamage()));
-                    if (l.getHealth() <= ev.getDamage()) {
-                        double toHeal = ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE);
-                        toHeal *= 0.1;
-                        double health = p.getHealth();
-                        double nowHealth = health + toHeal;
-                        if (nowHealth >= 20.0) {
-                            p.setHealth(20.0);
-                        } else {
-                            p.setHealth(nowHealth);
+                    if(p.getInventory().getItemInMainHand().equals(Ep1ns_Arsenal.instance.vampSword)) {
+                        LivingEntity l = (LivingEntity) ev.getEntity();
+                        p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE) + ev.getFinalDamage()));
+                        if (l.getHealth() <= ev.getDamage()) {
+                            double toHeal = ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE);
+                            toHeal *= 0.1;
+                            double health = p.getHealth();
+                            double nowHealth = health + toHeal;
+                            if (nowHealth >= 20.0) {
+                                p.setHealth(20.0);
+                            } else {
+                                p.setHealth(nowHealth);
+                            }
+                            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, 0.0);
                         }
-                        p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, 0.0);
                     }
                 }
             }

@@ -18,7 +18,7 @@ public class gappleUpdateListener implements Listener {
         if(ev.getItem().equals(Ep1ns_Arsenal.instance.infGapple))
         {
             ev.getPlayer().getInventory().setItemInMainHand(Ep1ns_Arsenal.instance.infGappleCool);
-            BukkitTask gapRefreshTask = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance).runTaskLater(Ep1ns_Arsenal.instance, 1800);
+            BukkitTask gapRefreshTask = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance).runTaskLater(Ep1ns_Arsenal.instance, 2400);
         }
     }
 }

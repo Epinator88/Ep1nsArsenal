@@ -22,9 +22,14 @@ public class throwFakeListener implements Listener {
         if(ev.getEntity().getShooter() instanceof Player)
         {
             Player p = (Player) ev.getEntity().getShooter();
-            if(p.getInventory().getItemInMainHand().equals(Ep1ns_Arsenal.instance.fakePearl))
+            if(p.getInventory().getItemInMainHand().isSimilar(Ep1ns_Arsenal.instance.fakePearl))
             {
-                ev.getEntity().setShooter(null);
+                Entity x = ev.getEntity().getWorld().spawnEntity(ev.getLocation(), EntityType.ENDER_PEARL);
+                x.setVelocity(ev.getEntity().getVelocity());
+                p.playSound(p, Sound.ENTITY_ENDER_PEARL_THROW, 0.175F, 0.5F);
+                int b = p.getInventory().getItemInMainHand().getAmount();
+                p.getInventory().getItemInMainHand().setAmount(b - 1);
+                ev.getEntity().remove();
             }
         }
     }

@@ -32,7 +32,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public ItemStack boots = new ItemStack(Material.NETHERITE_BOOTS);
 
-    public ItemStack fakePearl = new ItemStack(Material.ENDER_PEARL, 16);
+    public ItemStack fakePearl = new ItemStack(Material.ENDER_PEARL);
 
     public ItemStack gatlingBow = new ItemStack(Material.CROSSBOW);
 

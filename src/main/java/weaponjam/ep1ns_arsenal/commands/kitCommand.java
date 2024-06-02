@@ -27,7 +27,7 @@ public class kitCommand implements CommandExecutor {
         p.getInventory().setItem(2, Ep1ns_Arsenal.instance.bow);
         p.getInventory().setItem(3, Ep1ns_Arsenal.instance.gatlingBow);
         p.getInventory().setItem(4, new ItemStack(Material.ENDER_PEARL, 16));
-        p.getInventory().setItem(6, Ep1ns_Arsenal.instance.fakePearl);
+        p.getInventory().setItem(6, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
         p.getInventory().setItem(5, Ep1ns_Arsenal.instance.infGapple);
         p.getInventory().setItem(7, new ItemStack(Material.GOLDEN_CARROT, 64));
         p.getInventory().setItem(8, Ep1ns_Arsenal.instance.trident);
@@ -35,7 +35,8 @@ public class kitCommand implements CommandExecutor {
         p.getInventory().setItem(10, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(11, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(31, new ItemStack(Material.ENDER_PEARL, 16));
-        p.getInventory().setItem(33, Ep1ns_Arsenal.instance.fakePearl);
+        p.getInventory().setItem(33, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
+        p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
 
         return true;
     }

@@ -3,6 +3,7 @@ package weaponjam.ep1ns_arsenal.listeners;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
+import org.bukkit.entity.ThrownPotion;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -24,7 +25,7 @@ public class potPunchListener implements Listener {
                         .add(v.getX() * i, v.getY() * i, v.getZ() * i), 1, 1, 1).stream()
                         .filter(entity -> entity instanceof Projectile).map(entity -> (Projectile) entity)
                         .findFirst().orElse(null);
-                if (pot != null) {
+                if (pot instanceof ThrownPotion) {
                     pot.setVelocity(ev.getPlayer().getEyeLocation().getDirection().multiply(0.5));
                 }
             }

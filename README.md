@@ -20,4 +20,8 @@ Longfall Boots: Pair of boots that fully negate fall damage. Uncrouching launche
 
 Nullifying Shield: Stops all custom hit effects from happening. If hit with the Vampirism Sword, the sword loses some stored health.
 
+Ender Trident: Throwing the trident pulls the hit entity directly to you.
+
+Pot Punching: Hit thrown potions in the air to punch them in the direction you're looking in.
+
 And that's pretty much it for now! Ill add more later, but this seems like a lot already. 

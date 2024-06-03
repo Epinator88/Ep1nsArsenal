@@ -41,11 +41,10 @@ public class hitByCoolStuffListner implements Listener {
                 }
 
                 if (ev.getDamager().getPersistentDataContainer().has(Ep1ns_Arsenal.instance.specialArrow, PersistentDataType.BOOLEAN)) {
-                    Vector vel2 = new Vector(0, 5, 0);
-                    Location l = e.getLocation();
-                    Location l2 = l.clone().add(0, 1, 0);
-                    e.teleport(l2);
-                    ev.getEntity().setVelocity(vel2);
+                    Vector vel = e.getVelocity();
+                    Vector vel2 = vel.clone();
+                    vel2.setY(5);
+                    e.setVelocity(vel2);
                 }
             }
         }
@@ -67,7 +66,9 @@ public class hitByCoolStuffListner implements Listener {
             }
 
             if (ev.getDamager().getPersistentDataContainer().has(Ep1ns_Arsenal.instance.specialArrow, PersistentDataType.BOOLEAN)) {
-                Vector vel2 = new Vector(0, 5, 0);
+                Vector vel = ev.getEntity().getVelocity();
+                Vector vel2 = vel.clone();
+                vel2.setY(5);
                 ev.getEntity().setVelocity(vel2);
             }
         }

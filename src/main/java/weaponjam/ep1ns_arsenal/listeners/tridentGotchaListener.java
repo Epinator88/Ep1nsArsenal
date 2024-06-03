@@ -1,6 +1,7 @@
 package weaponjam.ep1ns_arsenal.listeners;
 
 import com.destroystokyo.paper.event.player.PlayerLaunchProjectileEvent;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Trident;
 import org.bukkit.event.EventHandler;
@@ -8,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.util.Vector;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
 
 public class tridentGotchaListener implements Listener {
@@ -31,9 +33,11 @@ public class tridentGotchaListener implements Listener {
     {
         if(ev.getDamager() instanceof Trident) {
             if (ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.funnyTrident, PersistentDataType.BOOLEAN)) {
-                ev.getEntity().teleport(p);
+                Location v = ev.getEntity().getLocation();
+                Location pos = p.getLocation();
+                Vector fling = pos.subtract(v).toVector();
+                ev.getEntity().setVelocity(fling);
             }
         }
     }
-
 }

@@ -50,6 +50,12 @@ public class onVampSteal implements Listener {
                         if (l.getHealth() <= ev.getDamage()) {
                             double toHeal = ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE);
                             toHeal *= 0.1;
+                            /*
+                            THIS IS VERY IMPORTANT.
+                            THIS VALUE ABOVE IS WHAT THE HEALTH STOLEN WITH THE VAMPIRISM SWORD IS MULTIPLIED BY WHEN YOU KILL A MOB.
+                            IT IS 10% OF THE HEALTH STORED IN THE SWORD ALTOGETHER.
+                            KILL A MOB AT YOUR OWN RISK, YOU LOSE 90% OF YOUR HEALTH.
+                             */
                             double health = p.getHealth();
                             double nowHealth = health + toHeal;
                             if (nowHealth >= 20.0) {

@@ -15,10 +15,12 @@ public class gappleUpdateListener implements Listener {
     @EventHandler
     public void onGapEat(PlayerItemConsumeEvent ev)
     {
-        if(ev.getItem().equals(Ep1ns_Arsenal.instance.infGapple))
+        if(ev.getItem().equals(Ep1ns_Arsenal.instance.infGapple) || ev.getItem().equals(Ep1ns_Arsenal.instance.infGappleMid1) || ev.getItem().equals(Ep1ns_Arsenal.instance.infGappleMid2))
         {
             ev.getPlayer().getInventory().setItemInMainHand(Ep1ns_Arsenal.instance.infGappleCool);
-            BukkitTask gapRefreshTask = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance).runTaskLater(Ep1ns_Arsenal.instance, 2400);
+            BukkitTask gapRefreshTask = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance, "fromCore").runTaskLater(Ep1ns_Arsenal.instance, 800);
+            BukkitTask gapRefreshTask2 = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance, "from1").runTaskLater(Ep1ns_Arsenal.instance, 1600);
+            BukkitTask gapRefreshTask3 = new gapRefreshTask(ev.getPlayer(), Ep1ns_Arsenal.instance, "from2").runTaskLater(Ep1ns_Arsenal.instance, 2400);
         }
     }
 }

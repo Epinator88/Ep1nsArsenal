@@ -56,6 +56,10 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public ItemStack infGappleCool = new ItemStack(Material.STICK);
 
+    public ItemStack infGappleMid1 = new ItemStack(Material.APPLE);
+
+    public ItemStack infGappleMid2 = new ItemStack(Material.GOLDEN_APPLE);
+
     @Override
     public void onEnable() {
         instance = this;
@@ -115,7 +119,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         c.setDisplayName("Goated Core");
         List<String> coreLore = new ArrayList<>();
         coreLore.add("The core of a Goated Apple.");
-        coreLore.add("Regrows automatically after 2m of having been eaten");
+        coreLore.add("Fully regrows automatically after 2m of having been eaten");
+        coreLore.add("Regrows it's first phase after 40s.");
         coreLore.add("Throw it away if you want, I guess. It won't regrow again though.");
         c.setLore(coreLore);
         infGappleCool.setItemMeta(c);
@@ -182,6 +187,16 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         trident.setItemMeta(a);
         trident.addEnchantment(Enchantment.LOYALTY, 3);
         getServer().getPluginManager().registerEvents(new tridentGotchaListener(), this);
+
+        ItemMeta h = infGappleMid1.getItemMeta();
+        h.setDisplayName("Regrowing Goated Apple");
+        List<String> apLore = new ArrayList<>();
+        apLore.add("A regrowing core of the Goated Apple.");
+        apLore.add("Can be eaten in a pinch, but must restart the growing process.");
+        apLore.add("40s inbetween each growing stage.");
+        h.setLore(apLore);
+        infGappleMid1.setItemMeta(h);
+        infGappleMid2.setItemMeta(h);
 
         onNewPlayer();
 

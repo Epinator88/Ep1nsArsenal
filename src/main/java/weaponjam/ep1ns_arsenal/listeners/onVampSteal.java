@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
 
 public class onVampSteal implements Listener {
@@ -19,14 +21,17 @@ public class onVampSteal implements Listener {
             if(ev.getEntity() instanceof Player) {
                 Player l = (Player) ev.getEntity();
                 if(Ep1ns_Arsenal.isShieldDown(l)) {
-                    l.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE) + ev.getFinalDamage()));
+                    p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE) + ev.getFinalDamage()));
                     if (l.getHealth() <= ev.getDamage()) {
                         double toHeal = ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE);
                         toHeal *= 0.9;
                         double health = p.getHealth();
                         double nowHealth = health + toHeal;
                         if (nowHealth >= 20.0) {
+                            nowHealth -= 20.0;
+                            int absAmnt = (int) nowHealth / 4;
                             p.setHealth(20.0);
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 1800, absAmnt));
                         } else {
                             p.setHealth(nowHealth);
                         }
@@ -48,7 +53,10 @@ public class onVampSteal implements Listener {
                             double health = p.getHealth();
                             double nowHealth = health + toHeal;
                             if (nowHealth >= 20.0) {
+                                nowHealth -= 20.0;
+                                int absAmnt = (int) nowHealth / 4;
                                 p.setHealth(20.0);
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 1800, absAmnt));
                             } else {
                                 p.setHealth(nowHealth);
                             }

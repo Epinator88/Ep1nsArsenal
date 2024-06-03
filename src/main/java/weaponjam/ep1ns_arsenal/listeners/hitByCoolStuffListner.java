@@ -2,6 +2,7 @@ package weaponjam.ep1ns_arsenal.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -29,7 +30,7 @@ public class hitByCoolStuffListner implements Listener {
                         if (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER) <= 0) {
                             Entity x = Bukkit.getWorld("world").spawnEntity(ev.getEntity().getLocation(), EntityType.PRIMED_TNT);
                             TNTPrimed y = (TNTPrimed) x;
-                            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 127));
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 2));
                             y.setFuseTicks(0);
                             p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 50);
                         } else {
@@ -40,7 +41,10 @@ public class hitByCoolStuffListner implements Listener {
                 }
 
                 if (ev.getDamager().getPersistentDataContainer().has(Ep1ns_Arsenal.instance.specialArrow, PersistentDataType.BOOLEAN)) {
-                    Vector vel2 = new Vector(0, 3, 0);
+                    Vector vel2 = new Vector(0, 5, 0);
+                    Location l = e.getLocation();
+                    Location l2 = l.clone().add(0, 1, 0);
+                    e.teleport(l2);
                     ev.getEntity().setVelocity(vel2);
                 }
             }
@@ -63,7 +67,7 @@ public class hitByCoolStuffListner implements Listener {
             }
 
             if (ev.getDamager().getPersistentDataContainer().has(Ep1ns_Arsenal.instance.specialArrow, PersistentDataType.BOOLEAN)) {
-                Vector vel2 = new Vector(0, 2, 0);
+                Vector vel2 = new Vector(0, 5, 0);
                 ev.getEntity().setVelocity(vel2);
             }
         }

@@ -86,7 +86,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         bow.setItemMeta(y);
         bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
         bow.addEnchantment(Enchantment.ARROW_FIRE, 1);
-        bow.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
+        bow.addEnchantment(Enchantment.ARROW_DAMAGE, 1);
         getServer().getPluginManager().registerEvents(new shootSpecialArrowListener(), this);
         getServer().getPluginManager().registerEvents(new RepulseListener(), this);
 

@@ -31,3 +31,9 @@ This is all the items. Then the features are:
 Pot Punching: Hit thrown potions in the air to punch them in the direction you're looking in.
 
 I'm very proud of all the work I've done on this. Bye!
+
+
+
+This is meant to be a tandem plugin in which my friend, MoonBoyGamer and I code weapons for minecraft!
+You can see his weapons here: https://github.com/m00nb0ygame8/Moons_Arsenal/tree/main
+(although be aware, the code might be buggy)

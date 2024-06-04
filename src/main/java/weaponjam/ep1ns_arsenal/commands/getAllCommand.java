@@ -17,20 +17,13 @@ public class getAllCommand implements CommandExecutor {
         if(sender instanceof Player)
         {
             Player p = (Player) sender;
-            int x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.vampSword);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.doubleaxe);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.trident);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.bow);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.gatlingBow);
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
-            x = p.getInventory().firstEmpty();
-            p.getInventory().setItem(x, Ep1ns_Arsenal.instance.infGapple);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.vampSword);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.doubleaxe);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.trident);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.bow);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.gatlingBow);
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
+            p.getInventory().addItem(Ep1ns_Arsenal.instance.infGapple);
             p.getInventory().setBoots(Ep1ns_Arsenal.instance.boots);
             p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
             p.getInventory().setChestplate(Ep1ns_Arsenal.instance.chest);

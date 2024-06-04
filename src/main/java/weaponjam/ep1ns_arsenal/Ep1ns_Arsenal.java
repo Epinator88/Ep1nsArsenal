@@ -5,7 +5,6 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -18,7 +17,6 @@ import weaponjam.ep1ns_arsenal.commands.storedQuery;
 import weaponjam.ep1ns_arsenal.listeners.*;
 import weaponjam.ep1ns_arsenal.tasks.*;
 
-import javax.xml.stream.events.Namespace;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +89,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         y.setUnbreakable(true);
         bow.setItemMeta(y);
         bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
-        bow.addEnchantment(Enchantment.ARROW_FIRE, 1);
+        bow.addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
         bow.addEnchantment(Enchantment.ARROW_DAMAGE, 1);
         getServer().getPluginManager().registerEvents(new shootSpecialArrowListener(), this);
         getServer().getPluginManager().registerEvents(new RepulseListener(), this);

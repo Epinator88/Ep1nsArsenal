@@ -53,7 +53,7 @@ public class hitByCoolStuffListner implements Listener {
                         if (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER) <= 0) {
                             Entity x = ev.getEntity().getWorld().spawnEntity(ev.getEntity().getLocation(), EntityType.PRIMED_TNT);
                             TNTPrimed y = (TNTPrimed) x;
-                            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 127));
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 2));
                             y.setFuseTicks(0);
                             p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 50);
                         } else {

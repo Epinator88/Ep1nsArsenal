@@ -13,8 +13,6 @@ public class countdownTask extends BukkitRunnable {
 
     private Player p;
 
-    private int multiplier;
-
     private Ep1ns_Arsenal plugin;
 
     public countdownTask(Player p, Ep1ns_Arsenal plugin) {

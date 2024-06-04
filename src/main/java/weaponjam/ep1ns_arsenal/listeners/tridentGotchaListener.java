@@ -36,6 +36,7 @@ public class tridentGotchaListener implements Listener {
                 Location v = ev.getEntity().getLocation();
                 Location pos = p.getLocation();
                 Vector fling = pos.subtract(v).toVector();
+                fling.setY(fling.getY()+3);
                 ev.getEntity().setVelocity(fling);
             }
         }

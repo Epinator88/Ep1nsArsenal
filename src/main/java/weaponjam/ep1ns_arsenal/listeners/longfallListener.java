@@ -27,10 +27,31 @@ public class longfallListener implements Listener {
                 if (p.getInventory().getBoots() == null) {
                 }
                 else {
-
                     if (p.getInventory().getBoots().equals(Ep1ns_Arsenal.instance.boots)) {
                         ev.setDamage(0.0);
                         p.playSound(p, Sound.BLOCK_ANVIL_LAND, .15F, 3F);
+                    }
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onFatassFall(EntityDamageEvent ev)
+    {
+        if(ev.getEntity() instanceof Player)
+        {
+            Player p = (Player) ev.getEntity();
+            if(ev.getDamageSource().getDamageType().equals(DamageType.FALL))
+            {
+                if(p.getInventory().getChestplate().equals(Ep1ns_Arsenal.instance.chest))
+                {
+                    double damage = ev.getDamage();
+                    float mod = (float) ((float) damage * 0.4);
+                    if(mod > 3.0F) {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 127));
+                        p.getLocation().createExplosion(mod, false, true);
+                        p.playSound(p, Sound.BLOCK_ANVIL_LAND, 3F, 0.25F);
                     }
                 }
             }

@@ -18,6 +18,8 @@ Goated Apple: Enchanted Golden Apple that regrows. Takes 2m to refresh. Regrows 
 
 Longfall Boots: Pair of boots that fully negate fall damage. Uncrouching launches you into the air
 
+Bulky Chestplate: A really thick chestplate that takes your fall damage and creates an explosion when you land based on that number. Works with Longfall Boots.
+
 Nullifying Shield: Stops all custom hit effects from happening. If hit with the Vampirism Sword, the sword loses some stored health.
 
 Ender Trident: Throwing the trident pulls the hit entity directly to you.

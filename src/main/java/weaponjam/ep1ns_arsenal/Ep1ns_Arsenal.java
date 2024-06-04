@@ -32,6 +32,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public ItemStack boots = new ItemStack(Material.NETHERITE_BOOTS);
 
+    public ItemStack chest = new ItemStack(Material.NETHERITE_CHESTPLATE);
+
     public ItemStack fakePearl = new ItemStack(Material.ENDER_PEARL);
 
     public ItemStack gatlingBow = new ItemStack(Material.CROSSBOW);
@@ -104,6 +106,18 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         z.setUnbreakable(true);
         boots.setItemMeta(z);
         getServer().getPluginManager().registerEvents(new longfallListener(), this);
+
+        ItemMeta i = chest.getItemMeta();
+        i.setDisplayName(ChatColor.YELLOW + "Bulky Chestplate");
+        List<String> chestLore = new ArrayList<>();
+        chestLore.add("A fatass chestplate.");
+        chestLore.add("When you land, creates a shockwave based the damage you take.");
+        chestLore.add("WILL break blocks. Tread lightly. Or heavily if you want too.");
+        chestLore.add("However, falls under 10 blocks will not trigger it. I think.");
+        chestLore.add("Works in tandem with the Longfall Boots, even though they negate damage.");
+        i.setLore(chestLore);
+        i.setUnbreakable(true);
+        chest.setItemMeta(i);
 
         ItemMeta b = infGapple.getItemMeta();
         b.setDisplayName(ChatColor.LIGHT_PURPLE + "Goated Apple");

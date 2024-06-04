@@ -27,6 +27,7 @@ public class getAllCommand implements CommandExecutor {
             p.getInventory().setBoots(Ep1ns_Arsenal.instance.boots);
             p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
             p.getInventory().setChestplate(Ep1ns_Arsenal.instance.chest);
+            p.getInventory().setHelmet(Ep1ns_Arsenal.instance.helm);
         }
         return true;
     }

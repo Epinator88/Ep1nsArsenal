@@ -1,6 +1,8 @@
 package weaponjam.ep1ns_arsenal.listeners;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,6 +26,17 @@ public class RepulseListener implements Listener {
                         Vector x = vel.clone();
                         x.setY(1.5);
                         ev.getPlayer().setVelocity(x);
+                        if(ev.getPlayer().getInventory().getHelmet().equals(Ep1ns_Arsenal.instance.helm) && ev.getPlayer().getInventory().getHelmet() != null)
+                        {
+                            Location l = ev.getPlayer().getLocation().clone();
+                            l.add(0, 2, 0);
+                            l.getBlock().setType(Material.AIR);
+                            for(int i = 1; i < 13; i++)
+                            {
+                                l.add(0, 1, 0);
+                                l.getBlock().setType(Material.AIR);
+                            }
+                        }
                         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, 30);
                         ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 0.5F, 1F);
                     } else {

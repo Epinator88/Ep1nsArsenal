@@ -8,7 +8,7 @@ Vampirism Sword: Steal hearts from those you attack and get them for yourself, o
 
 Explosive Battleaxe: Explode the enemy with a swing of the axe. 5 second cooldown on explosion.
 
-Repulsor Bow: Shot arrows are imbued with wind magic and are unaffected by gravity. Readying an arrow gives you slow falling for better aim. Arrows will launch enemies into the air given they are already airborne.
+Repulsor Bow: Shot arrows are imbued with wind magic and are unaffected by gravity. Readying an arrow gives you slow falling for better aim. Arrows will launch enemies into the air. Use wisely.
 
 Gatling Bow: Click to shoot an arrow. No windup. Does slightly reduced damage compared to a normal bow.
 
@@ -18,7 +18,7 @@ Goated Apple: Enchanted Golden Apple that regrows. Takes 2m to refresh. Regrows 
 
 Longfall Boots: Pair of boots that fully negate fall damage. Uncrouching launches you into the air
 
-Bulky Chestplate: A really thick chestplate that takes your fall damage and creates an explosion when you land based on that number. Works with Longfall Boots.
+Bulky Chestplate: A really thick chestplate that takes your fall damage and creates an explosion when you land based on that number. Max blocks fallable without triggering an explosion is 10. Works with Longfall Boots.
 
 Nullifying Shield: Stops all custom hit effects from happening. If hit with the Vampirism Sword, the sword loses some stored health.
 

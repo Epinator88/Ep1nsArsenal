@@ -6,7 +6,7 @@
 
     <groupId>weaponjam</groupId>
     <artifactId>ep1ns_arsenal</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <packaging>jar</packaging>
 
     <name>Ep1ns_Arsenal</name>

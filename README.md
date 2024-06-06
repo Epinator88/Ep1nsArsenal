@@ -32,7 +32,7 @@ This is all the items. Then the features are:
 
 Pot Punching: Hit thrown potions in the air to punch them in the direction you're looking in.
 
-Parrying: If you put your shield up, for the next 1/4 of a second, if someone hits you, they get weakness for a short period of time. Cannot be spammed.
+Parrying: If you put your shield up, for the next 1/4 of a second, if someone hits you, they get weakness for a short period of time. Cannot be spammed. If someone hits your parry, though, the cooldown is wiped.
 
 I'm very proud of all the work I've done on this. Bye!
 

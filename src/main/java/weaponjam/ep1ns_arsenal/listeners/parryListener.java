@@ -23,8 +23,8 @@ public class parryListener implements Listener {
             {
                 if(ev.getPlayer().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER) == 0) {
                     ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 3F);
-                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
-                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 30);
+                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 3);
+                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 15);
                 }
             }
         }

@@ -22,6 +22,7 @@ public class countdownTask extends BukkitRunnable {
 
     @Override
     public void run() {
+        //NOTE TO SELF: THIS TASK RUNS EVERY 2 TICKS, NOT EVERY TICK.
         if(p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER) > 0)
         {
             p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER) - 1));

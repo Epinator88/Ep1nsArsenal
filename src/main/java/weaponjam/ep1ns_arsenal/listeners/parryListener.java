@@ -21,7 +21,7 @@ public class parryListener implements Listener {
         {
             if(ev.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.SHIELD))
             {
-                ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 1F);
+                ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 3F);
                 ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
             }
         }

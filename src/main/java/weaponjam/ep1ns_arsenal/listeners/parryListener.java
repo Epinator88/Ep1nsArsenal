@@ -1,0 +1,47 @@
+package weaponjam.ep1ns_arsenal.listeners;
+
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
+
+public class parryListener implements Listener {
+
+    @EventHandler
+    public void onShieldUp(PlayerInteractEvent ev)
+    {
+        if(ev.getAction().isRightClick())
+        {
+            if(ev.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.SHIELD))
+            {
+                ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 1F);
+                ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onHitParrying(EntityDamageByEntityEvent ev)
+    {
+        if(ev.getEntity() instanceof Player && ev.getDamager() instanceof Player)
+        {
+            Player p = (Player) ev.getDamager();
+            Player e = (Player) ev.getEntity();
+            if(e.getInventory().getItemInOffHand().getType().equals(Material.SHIELD))
+            {
+                if(e.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER) > 0)
+                {
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20, 2));
+                    p.playSound(p, Sound.BLOCK_ANVIL_BREAK, 1F, 1F);
+                }
+            }
+        }
+    }
+}

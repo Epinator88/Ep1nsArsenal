@@ -53,6 +53,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public NamespacedKey funnyTrident = new NamespacedKey(this, "funnyTrident");
 
+    public NamespacedKey parryTiming = new NamespacedKey(this, "parryTiming");
+
     public ItemStack infGapple = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE);
 
     public ItemStack infGappleCool = new ItemStack(Material.STICK);
@@ -93,7 +95,6 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         bow.addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
         bow.addEnchantment(Enchantment.ARROW_DAMAGE, 1);
         getServer().getPluginManager().registerEvents(new shootSpecialArrowListener(), this);
-        getServer().getPluginManager().registerEvents(new RepulseListener(), this);
 
         ItemMeta z = boots.getItemMeta();
         z.setDisplayName(ChatColor.YELLOW + "Longfall Boots");
@@ -105,6 +106,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         z.setUnbreakable(true);
         boots.setItemMeta(z);
         getServer().getPluginManager().registerEvents(new longfallListener(), this);
+        getServer().getPluginManager().registerEvents(new repulseListener(), this);
 
         ItemMeta i = chest.getItemMeta();
         i.setDisplayName(ChatColor.YELLOW + "Bulky Chestplate");
@@ -244,6 +246,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new potPunchListener(), this);
 
         getServer().getPluginManager().registerEvents(new playerJoinEvent(), this);
+
+        getServer().getPluginManager().registerEvents(new parryListener(), this);
     }
 
     public void onNewPlayer()
@@ -255,6 +259,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
                 p.getPersistentDataContainer().set(jumpTimer, PersistentDataType.INTEGER, 30);
                 p.getPersistentDataContainer().set(axeTimer, PersistentDataType.INTEGER, 50);
                 p.getPersistentDataContainer().set(storedHealth, PersistentDataType.DOUBLE, 0.0);
+                p.getPersistentDataContainer().set(parryTiming, PersistentDataType.INTEGER, 5);
                 BukkitTask countdownTask = new countdownTask(p, this).runTaskTimer(this, 0L, 2L);
             }
         }

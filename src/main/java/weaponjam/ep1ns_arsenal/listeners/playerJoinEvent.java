@@ -16,6 +16,7 @@ public class playerJoinEvent implements Listener {
         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, 30);
         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 50);
         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE, 0.0);
+        ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
         BukkitTask countdownTask = new countdownTask(ev.getPlayer(), Ep1ns_Arsenal.instance).runTaskTimer(Ep1ns_Arsenal.instance, 0L, 2L);
         ev.setJoinMessage(ev.getPlayer().getDisplayName() + " joined!!!");
     }

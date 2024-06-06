@@ -1,6 +1,5 @@
 package weaponjam.ep1ns_arsenal.listeners;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -9,12 +8,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
 
-public class RepulseListener implements Listener {
+public class repulseListener implements Listener {
 
     @EventHandler
     public void OnShiftPress(PlayerToggleSneakEvent ev)

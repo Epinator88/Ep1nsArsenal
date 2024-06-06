@@ -20,7 +20,9 @@ Longfall Boots: Pair of boots that fully negate fall damage. Uncrouching launche
 
 Bulky Chestplate: A really thick chestplate that takes your fall damage and creates an explosion when you land based on that number. Max blocks fallable without triggering an explosion is 10. Works with Longfall Boots.
 
-Drill Helmet: Going upwards will break the blocks above you. Includes the Repulse from the Longfall Boots
+Drill Helmet: Going upwards will break the blocks above you. Includes the Repulse from the Longfall Boots.
+
+Blastproof Leggings: Take no damage from explosions at your legs. Your upper body and feet remain vulnerable, though.
 
 Nullifying Shield: Stops all custom hit effects from happening. If hit with the Vampirism Sword, the sword loses some stored health.
 

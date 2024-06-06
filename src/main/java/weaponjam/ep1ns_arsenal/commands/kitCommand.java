@@ -19,7 +19,7 @@ public class kitCommand implements CommandExecutor {
         p.getInventory().clear();
         p.getInventory().setHelmet(Ep1ns_Arsenal.instance.helm);
         p.getInventory().setChestplate(Ep1ns_Arsenal.instance.chest);
-        p.getInventory().setLeggings(new ItemStack(Material.NETHERITE_LEGGINGS));
+        p.getInventory().setLeggings(Ep1ns_Arsenal.instance.jorts);
         p.getInventory().setBoots(Ep1ns_Arsenal.instance.boots);
 
         p.getInventory().setItem(0, Ep1ns_Arsenal.instance.vampSword);

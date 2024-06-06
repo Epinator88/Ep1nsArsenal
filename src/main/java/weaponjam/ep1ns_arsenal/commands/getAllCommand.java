@@ -1,11 +1,9 @@
 package weaponjam.ep1ns_arsenal.commands;
 
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
 
@@ -28,6 +26,7 @@ public class getAllCommand implements CommandExecutor {
             p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
             p.getInventory().setChestplate(Ep1ns_Arsenal.instance.chest);
             p.getInventory().setHelmet(Ep1ns_Arsenal.instance.helm);
+            p.getInventory().setLeggings(Ep1ns_Arsenal.instance.jorts);
         }
         return true;
     }

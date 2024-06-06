@@ -7,6 +7,7 @@ import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -30,11 +31,11 @@ public class RepulseListener implements Listener {
                         {
                             Location l = ev.getPlayer().getLocation().clone();
                             l.add(0, 2, 0);
-                            l.getBlock().setType(Material.AIR);
+                            l.getBlock().breakNaturally(new ItemStack(Material.NETHERITE_PICKAXE), true, true);
                             for(int i = 1; i < 13; i++)
                             {
                                 l.add(0, 1, 0);
-                                l.getBlock().setType(Material.AIR);
+                                l.getBlock().breakNaturally(new ItemStack(Material.NETHERITE_PICKAXE), true, true);
                             }
                         }
                         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, 30);

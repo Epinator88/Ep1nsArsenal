@@ -27,6 +27,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public ItemStack boots = new ItemStack(Material.NETHERITE_BOOTS);
 
+    public ItemStack jorts = new ItemStack(Material.NETHERITE_LEGGINGS);
+
     public ItemStack chest = new ItemStack(Material.NETHERITE_CHESTPLATE);
 
     public ItemStack helm = new ItemStack(Material.NETHERITE_HELMET);
@@ -126,6 +128,17 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         j.setUnbreakable(true);
         helm.setItemMeta(j);
         getServer().getPluginManager().registerEvents(new onHops(), this);
+
+        ItemMeta k = jorts.getItemMeta();
+        k.setDisplayName(ChatColor.YELLOW + "Blastproof Pants");
+        List<String> jortLore = new ArrayList<>();
+        jortLore.add("A pair of very dense pants.");
+        jortLore.add("Any explosion at your feet will not harm you.");
+        jortLore.add("Not good if the explosion is at eye level, above or below you, though.");
+        k.setLore(jortLore);
+        k.setUnbreakable(true);
+        jorts.setItemMeta(k);
+        getServer().getPluginManager().registerEvents(new explodedListener(), this);
 
         ItemMeta b = infGapple.getItemMeta();
         b.setDisplayName(ChatColor.LIGHT_PURPLE + "Goated Apple");

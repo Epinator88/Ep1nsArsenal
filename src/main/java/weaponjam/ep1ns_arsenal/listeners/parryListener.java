@@ -21,8 +21,11 @@ public class parryListener implements Listener {
         {
             if(ev.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.SHIELD))
             {
-                ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 3F);
-                ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
+                if(ev.getPlayer().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER) == 0) {
+                    ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_HORSE_SADDLE, 0.5F, 3F);
+                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, 5);
+                    ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 30);
+                }
             }
         }
     }
@@ -40,6 +43,7 @@ public class parryListener implements Listener {
                 {
                     p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20, 2));
                     p.playSound(p, Sound.BLOCK_ANVIL_BREAK, 1F, 1F);
+                    e.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 0);
                 }
             }
         }

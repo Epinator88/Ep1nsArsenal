@@ -55,6 +55,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public NamespacedKey parryTiming = new NamespacedKey(this, "parryTiming");
 
+    public NamespacedKey parryCDTiming = new NamespacedKey(this, "parryCDTiming");
+
     public ItemStack infGapple = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE);
 
     public ItemStack infGappleCool = new ItemStack(Material.STICK);

@@ -34,5 +34,9 @@ public class countdownTask extends BukkitRunnable {
         {
             p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER) - 1));
         }
+        if(p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER) > 0)
+        {
+            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, (p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER) - 1));
+        }
     }
 }

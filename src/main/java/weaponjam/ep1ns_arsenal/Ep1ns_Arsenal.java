@@ -262,6 +262,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
                 p.getPersistentDataContainer().set(axeTimer, PersistentDataType.INTEGER, 50);
                 p.getPersistentDataContainer().set(storedHealth, PersistentDataType.DOUBLE, 0.0);
                 p.getPersistentDataContainer().set(parryTiming, PersistentDataType.INTEGER, 5);
+                p.getPersistentDataContainer().set(parryCDTiming, PersistentDataType.INTEGER, 0);
                 BukkitTask countdownTask = new countdownTask(p, this).runTaskTimer(this, 0L, 2L);
             }
         }

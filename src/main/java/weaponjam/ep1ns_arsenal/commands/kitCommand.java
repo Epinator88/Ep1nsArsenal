@@ -24,18 +24,18 @@ public class kitCommand implements CommandExecutor {
 
         p.getInventory().setItem(0, Ep1ns_Arsenal.instance.vampSword);
         p.getInventory().setItem(1, Ep1ns_Arsenal.instance.doubleaxe);
-        p.getInventory().setItem(2, Ep1ns_Arsenal.instance.bow);
-        p.getInventory().setItem(3, Ep1ns_Arsenal.instance.gatlingBow);
-        p.getInventory().setItem(4, new ItemStack(Material.ENDER_PEARL, 16));
-        p.getInventory().setItem(6, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
-        p.getInventory().setItem(5, Ep1ns_Arsenal.instance.infGapple);
-        p.getInventory().setItem(7, new ItemStack(Material.GOLDEN_CARROT, 64));
-        p.getInventory().setItem(8, Ep1ns_Arsenal.instance.trident);
+        p.getInventory().setItem(2, Ep1ns_Arsenal.instance.trident);
+        p.getInventory().setItem(3, Ep1ns_Arsenal.instance.bow);
+        p.getInventory().setItem(4, Ep1ns_Arsenal.instance.gatlingBow);
+        p.getInventory().setItem(5, new ItemStack(Material.ENDER_PEARL, 16));
+        p.getInventory().setItem(6, Ep1ns_Arsenal.instance.infGapple);
+        p.getInventory().setItem(7, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
+        p.getInventory().setItem(8, new ItemStack(Material.GOLDEN_CARROT, 64));
         p.getInventory().setItem(9, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(10, new ItemStack(Material.ARROW, 64));
         p.getInventory().setItem(11, new ItemStack(Material.ARROW, 64));
-        p.getInventory().setItem(31, new ItemStack(Material.ENDER_PEARL, 16));
-        p.getInventory().setItem(33, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
+        p.getInventory().setItem(32, new ItemStack(Material.ENDER_PEARL, 16));
+        p.getInventory().setItem(34, Ep1ns_Arsenal.instance.fakePearl.asQuantity(16));
         p.getInventory().setItemInOffHand(Ep1ns_Arsenal.instance.godShield);
 
         return true;

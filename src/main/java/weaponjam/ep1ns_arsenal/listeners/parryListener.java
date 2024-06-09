@@ -41,9 +41,11 @@ public class parryListener implements Listener {
             {
                 if(e.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.parryTiming, PersistentDataType.INTEGER) > 0)
                 {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20, 2));
-                    p.playSound(p, Sound.BLOCK_ANVIL_BREAK, 1F, 1F);
-                    e.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 0);
+                    if(e.isBlocking()) {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20, 2));
+                        p.playSound(p, Sound.BLOCK_ANVIL_BREAK, 1F, 1F);
+                        e.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.parryCDTiming, PersistentDataType.INTEGER, 0);
+                    }
                 }
             }
         }

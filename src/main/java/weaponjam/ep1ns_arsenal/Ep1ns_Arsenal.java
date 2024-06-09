@@ -88,8 +88,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         bowLore.add("A bow imbued with Wind Magic.");
         bowLore.add("Arrows shot with the bow are not affected by gravity.");
         bowLore.add("Slows your fall when you charge a shot for more accuracy.");
-        bowLore.add("Some arrows can launch hit players!");
-        bowLore.add("Very windy");
+        bowLore.add("Mobs hit by these arrows will go flying into the air.");
+        bowLore.add("Very windy!");
         y.setLore(bowLore);
         y.setUnbreakable(true);
         bow.setItemMeta(y);
@@ -194,8 +194,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         swordLore.add("A sword that steals the life of those it damages.");
         swordLore.add("The sword stores stolen health, and applies it only when the foe is slain");
         swordLore.add("All health is given at once, no matter who is still alive.");
+        swordLore.add("Stacks into absorption if your health is already full.");
         swordLore.add("Barely works on non-player entities. Loses most of its charge, but is good in a pinch.");
-        swordLore.add("sussy test");
         f.setLore(swordLore);
         f.setUnbreakable(true);
         vampSword.setItemMeta(f);
@@ -216,10 +216,10 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         godShield.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1000);
 
         ItemMeta a = trident.getItemMeta();
-        a.setDisplayName(ChatColor.BLUE + "Ender Trident");
+        a.setDisplayName(ChatColor.BLUE + "Grappling Trident");
         List<String> triLore = new ArrayList<>();
-        triLore.add("A trident only found in End Cities.");
-        triLore.add("On hit, brings the target back to the thrower.");
+        triLore.add("A strange type of trident, with rope attached to it.");
+        triLore.add("On hit, pulls the target back to the thrower.");
         triLore.add("GET OVER HERE!!!");
         a.setUnbreakable(true);
         a.setLore(triLore);

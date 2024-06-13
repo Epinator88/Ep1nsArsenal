@@ -134,11 +134,11 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new onHops(), this);
 
         ItemMeta k = jorts.getItemMeta();
-        k.setDisplayName(ChatColor.YELLOW + "Blastproof Pants");
+        k.setDisplayName(ChatColor.YELLOW + "Blastproof Jorts");
         List<String> jortLore = new ArrayList<>();
-        jortLore.add("A pair of very dense pants.");
+        jortLore.add("A pair of very dense jean-shorts.");
         jortLore.add("Any explosion at your feet will not harm you.");
-        jortLore.add("Not good if the explosion is at eye level, above or below you, though.");
+        jortLore.add("Not good if the explosion is at eye level, above, or below you, though.");
         k.setLore(jortLore);
         k.setUnbreakable(true);
         jorts.setItemMeta(k);

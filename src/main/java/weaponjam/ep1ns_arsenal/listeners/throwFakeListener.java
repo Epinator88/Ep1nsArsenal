@@ -7,30 +7,43 @@ import org.bukkit.Sound;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.Vector;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
+import weaponjam.ep1ns_arsenal.tasks.*;
 
 public class throwFakeListener implements Listener {
+
+    private Location l;
+
+    private Player p;
 
     @EventHandler
     public void onPlayerThrow(ProjectileLaunchEvent ev)
     {
         if(ev.getEntity().getShooter() instanceof Player)
         {
-            Player p = (Player) ev.getEntity().getShooter();
+            p = (Player) ev.getEntity().getShooter();
             if(p.getInventory().getItemInMainHand().isSimilar(Ep1ns_Arsenal.instance.fakePearl))
             {
-                Entity x = ev.getEntity().getWorld().spawnEntity(ev.getLocation(), EntityType.ENDER_PEARL);
-                x.setVelocity(ev.getEntity().getVelocity());
-                p.playSound(p, Sound.ENTITY_ENDER_PEARL_THROW, 0.175F, 0.5F);
-                int b = p.getInventory().getItemInMainHand().getAmount();
-                p.getInventory().getItemInMainHand().setAmount(b - 1);
-                ev.getEntity().remove();
+                ev.getEntity().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.isfakePearl, PersistentDataType.BOOLEAN, true);
             }
+        }
+    }
+
+
+    @EventHandler
+    public void onLand(ProjectileHitEvent ev)
+    {
+        if(ev.getEntity().getPersistentDataContainer().has(Ep1ns_Arsenal.instance.isfakePearl, PersistentDataType.BOOLEAN))
+        {
+            Location l = p.getLocation();
+            BukkitTask fakeBackTask = new fakeBackTask(l, p).runTaskLater(Ep1ns_Arsenal.instance, 30L);
         }
     }
 }

@@ -45,6 +45,8 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
 
     public NamespacedKey specialArrow = new NamespacedKey(this, "specialArrow");
 
+    public NamespacedKey isfakePearl = new NamespacedKey(this, "isfakePearl");
+
     public NamespacedKey jumpTimer = new NamespacedKey(this, "jumpTimer");
 
     public NamespacedKey axeTimer = new NamespacedKey(this, "axeTimer");

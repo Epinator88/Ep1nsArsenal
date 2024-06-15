@@ -76,12 +76,11 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         axelore.add("A combustible axe.");
         axelore.add("You take much less damage from exploding others.");
         axelore.add("Be sure not to cut yourself!");
-        axelore.add("COOLDOWN: 5 SECONDS (FOR EXPLOSION)");
+        axelore.add("COOLDOWN: 10 SECONDS (FOR EXPLOSION)");
         x.setLore(axelore);
         x.setUnbreakable(true);
         doubleaxe.setItemMeta(x);
         doubleaxe.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 1);
-        doubleaxe.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 5);
         getServer().getPluginManager().registerEvents(new hitByCoolStuffListner(), this);
 
         ItemMeta y = bow.getItemMeta();
@@ -198,6 +197,7 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         swordLore.add("All health is given at once, no matter who is still alive.");
         swordLore.add("Stacks into absorption if your health is already full.");
         swordLore.add("Barely works on non-player entities. Loses most of its charge, but is good in a pinch.");
+        swordLore.add("Stored Health: " + 0);
         f.setLore(swordLore);
         f.setUnbreakable(true);
         vampSword.setItemMeta(f);

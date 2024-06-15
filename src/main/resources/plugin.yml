@@ -1,5 +1,5 @@
 name: Ep1ns_Arsenal
-version: 1.4.4
+version: 1.4.3
 main: weaponjam.ep1ns_arsenal.Ep1ns_Arsenal
 api-version: 1.20
 description: Adds some stuff. Do /giveall to recieve all plugin stuff.

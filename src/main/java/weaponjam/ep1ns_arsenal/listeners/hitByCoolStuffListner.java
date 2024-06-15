@@ -31,7 +31,7 @@ public class hitByCoolStuffListner implements Listener {
                             TNTPrimed y = (TNTPrimed) x;
                             p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 2));
                             y.setFuseTicks(0);
-                            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 50);
+                            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 100);
                         } else {
                             int z = p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER);
                             p.sendMessage("On Cooldown! " + (z / 10) + "." + (z % 10));
@@ -55,7 +55,7 @@ public class hitByCoolStuffListner implements Listener {
                             TNTPrimed y = (TNTPrimed) x;
                             p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 4, 2));
                             y.setFuseTicks(0);
-                            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 50);
+                            p.getPersistentDataContainer().set(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER, 100);
                         } else {
                             int z = p.getPersistentDataContainer().get(Ep1ns_Arsenal.instance.axeTimer, PersistentDataType.INTEGER);
                             p.sendMessage("On Cooldown! " + (z / 10) + "." + (z % 10));

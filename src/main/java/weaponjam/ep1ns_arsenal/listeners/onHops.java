@@ -16,7 +16,7 @@ public class onHops implements Listener {
     @EventHandler
     public void onJump(PlayerJumpEvent ev)
     {
-        if(ev.getPlayer().getInventory().getHelmet().equals(Ep1ns_Arsenal.instance.helm) && ev.getPlayer().getInventory().getHelmet() != null)
+        if(ev.getPlayer().getInventory().getHelmet() != null && ev.getPlayer().getInventory().getHelmet().equals(Ep1ns_Arsenal.instance.helm))
         {
             Location l = ev.getPlayer().getLocation().clone();
             l.add(0, 2, 0);

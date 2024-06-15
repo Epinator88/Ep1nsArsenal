@@ -33,11 +33,8 @@ public class tridentGotchaListener implements Listener {
     {
         if(ev.getDamager() instanceof Trident) {
             if (ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.funnyTrident, PersistentDataType.BOOLEAN)) {
-                Location v = ev.getEntity().getLocation();
-                Location pos = p.getLocation();
-                Vector fling = pos.subtract(v).toVector();
-                fling.setY(fling.getY()+3);
-                ev.getEntity().setVelocity(fling);
+                Location v = p.getLocation();
+                ev.getEntity().teleport(v);
             }
         }
     }

@@ -22,7 +22,6 @@ public class shootSpecialArrowListener implements Listener {
             Player p = (Player) ev.getEntity();
             if(p.getInventory().getItemInMainHand().equals(Ep1ns_Arsenal.instance.bow))
             {
-                ev.getProjectile().setGravity(false);
                 ev.getProjectile().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.specialArrow, PersistentDataType.BOOLEAN, true);
             }
         }

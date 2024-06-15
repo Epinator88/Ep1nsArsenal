@@ -1,14 +1,18 @@
 package weaponjam.ep1ns_arsenal.listeners;
 
+import org.bukkit.entity.Item;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import weaponjam.ep1ns_arsenal.Ep1ns_Arsenal;
+
+import java.util.List;
 
 public class onVampSteal implements Listener {
 
@@ -55,7 +59,7 @@ public class onVampSteal implements Listener {
                         if (l.getHealth() <= ev.getDamage()) {
                             if(p.getInventory().getItemInMainHand() != null && p.getInventory().getItemInMainHand().equals(Ep1ns_Arsenal.instance.vampSword)) {
                                 double toHeal = ev.getDamager().getPersistentDataContainer().get(Ep1ns_Arsenal.instance.storedHealth, PersistentDataType.DOUBLE);
-                                toHeal *= 0.1;
+                                toHeal *= 0.2;
                             /*
                             THIS IS VERY IMPORTANT.
                             THIS VALUE ABOVE IS WHAT THE HEALTH STOLEN WITH THE VAMPIRISM SWORD IS MULTIPLIED BY WHEN YOU KILL A MOB.

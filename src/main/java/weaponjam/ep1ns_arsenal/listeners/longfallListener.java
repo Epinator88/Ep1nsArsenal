@@ -28,11 +28,7 @@ public class longfallListener implements Listener {
                 {
                     double damage = ev.getDamage();
                     float mod = (float) ((float) damage * 0.4);
-                    p.setFoodLevel(p.getFoodLevel());
                     if(mod > 3.0F) {
-                        if(mod < 7.0F) {
-                            mod = 7.0F;
-                        }
                         p.setInvulnerable(true);
                         p.getLocation().createExplosion(mod, false, true);
                         p.setInvulnerable(false);

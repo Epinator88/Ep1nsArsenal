@@ -129,10 +129,10 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         hatLore.add("A difficult to break helmet.");
         hatLore.add("When you headhit into a block, the block breaks.");
         hatLore.add("Made of the densest things on earth: White Twitter Women");
+        hatLore.add("Also, when you repulse, those above you are knocked into the stratosphere.");
         j.setLore(hatLore);
         j.setUnbreakable(true);
         helm.setItemMeta(j);
-        getServer().getPluginManager().registerEvents(new onHops(), this);
 
         ItemMeta k = jorts.getItemMeta();
         k.setDisplayName(ChatColor.YELLOW + "Blastproof Jorts");

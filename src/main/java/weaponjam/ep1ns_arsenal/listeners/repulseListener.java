@@ -3,6 +3,8 @@ package weaponjam.ep1ns_arsenal.listeners;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
@@ -26,13 +28,16 @@ public class repulseListener implements Listener {
                         ev.getPlayer().setVelocity(x);
                         if(ev.getPlayer().getInventory().getHelmet().equals(Ep1ns_Arsenal.instance.helm) && ev.getPlayer().getInventory().getHelmet() != null)
                         {
-                            Location l = ev.getPlayer().getLocation().clone();
-                            l.add(0, 2, 0);
-                            l.getBlock().breakNaturally(new ItemStack(Material.NETHERITE_PICKAXE), true, true);
-                            for(int i = 1; i < 13; i++)
+                            Location loc = ev.getPlayer().getLocation();
+                            for(int i = 0; i < 7; i++)
                             {
-                                l.add(0, 1, 0);
-                                l.getBlock().breakNaturally(new ItemStack(Material.NETHERITE_PICKAXE), true, true);
+                                Location l = loc.add(0, i, 0);
+                                Player pl = l.getNearbyLivingEntities(1.8).stream().filter(LivingEntity -> LivingEntity instanceof Player).map(LivingEntity -> (Player) LivingEntity).findFirst().orElse(null);
+                                if(pl != null) {
+                                    Vector vel2 = pl.getVelocity();
+                                    vel2.setY(15);
+                                    pl.setVelocity(vel2);
+                                }
                             }
                         }
                         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, 30);

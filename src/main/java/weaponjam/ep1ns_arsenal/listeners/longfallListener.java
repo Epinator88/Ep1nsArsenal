@@ -28,7 +28,7 @@ public class longfallListener implements Listener {
                 {
                     double damage = ev.getDamage();
                     float mod = (float) ((float) damage * 0.4);
-                    if(mod > 3.0F) {
+                    if(mod > 4.3F) {
                         p.setInvulnerable(true);
                         p.getLocation().createExplosion(mod, false, true);
                         p.setInvulnerable(false);

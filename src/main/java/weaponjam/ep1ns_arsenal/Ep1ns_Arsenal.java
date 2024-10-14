@@ -87,7 +87,6 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         y.setDisplayName(ChatColor.AQUA + "Repulsor Bow");
         List<String> bowLore = new ArrayList<>();
         bowLore.add("A bow imbued with Wind Magic.");
-        bowLore.add("Arrows shot with the bow are not affected by gravity.");
         bowLore.add("Slows your fall when you charge a shot for more accuracy.");
         bowLore.add("Mobs hit by these arrows will go flying into the air.");
         bowLore.add("Very windy!");
@@ -124,15 +123,18 @@ public final class Ep1ns_Arsenal extends JavaPlugin {
         chest.setItemMeta(i);
 
         ItemMeta j = helm.getItemMeta();
-        j.setDisplayName(ChatColor.YELLOW + "Hard Hat");
+        j.setDisplayName(ChatColor.YELLOW + "Scorched Wreath");
         List<String> hatLore = new ArrayList<>();
-        hatLore.add("A difficult to break helmet.");
-        hatLore.add("When you headhit into a block, the block breaks.");
-        hatLore.add("Made of the densest things on earth: White Twitter Women");
-        hatLore.add("Also, when you repulse, those above you are knocked into the stratosphere.");
+        hatLore.add("A helm forged with the heat of the deepfire, a source of fire so pure it burns underwater");
+        hatLore.add("When becoming low on health, the fire from the helmet reacts.");
+        hatLore.add("The hat fills your veins with fire in an attempt to fix you.");
+        hatLore.add("Knowing that this normally damages you, it disallows said fire from hurting you.");
+        hatLore.add("While it doesn't work, you feel invgorated from it's attempt.");
         j.setLore(hatLore);
         j.setUnbreakable(true);
         helm.setItemMeta(j);
+        getServer().getPluginManager().registerEvents(new shouldSetAblazeListener(), this);
+        getServer().getPluginManager().registerEvents(new shouldSetAblazeListener(), this);
 
         ItemMeta k = jorts.getItemMeta();
         k.setDisplayName(ChatColor.YELLOW + "Blastproof Jorts");

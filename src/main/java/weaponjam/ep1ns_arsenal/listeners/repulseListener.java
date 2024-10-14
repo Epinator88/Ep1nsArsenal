@@ -26,20 +26,6 @@ public class repulseListener implements Listener {
                         Vector x = vel.clone();
                         x.setY(1.5);
                         ev.getPlayer().setVelocity(x);
-                        if(ev.getPlayer().getInventory().getHelmet().equals(Ep1ns_Arsenal.instance.helm) && ev.getPlayer().getInventory().getHelmet() != null)
-                        {
-                            Location loc = ev.getPlayer().getLocation();
-                            for(int i = 0; i < 7; i++)
-                            {
-                                Location l = loc.add(0, i, 0);
-                                Player pl = l.getNearbyLivingEntities(1.8).stream().filter(LivingEntity -> LivingEntity instanceof Player).map(LivingEntity -> (Player) LivingEntity).findFirst().orElse(null);
-                                if(pl != null) {
-                                    Vector vel2 = pl.getVelocity();
-                                    vel2.setY(15);
-                                    pl.setVelocity(vel2);
-                                }
-                            }
-                        }
                         ev.getPlayer().getPersistentDataContainer().set(Ep1ns_Arsenal.instance.jumpTimer, PersistentDataType.INTEGER, 30);
                         ev.getPlayer().playSound(ev.getPlayer(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 0.5F, 1F);
                     } else {
